@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Source+Code+Pro&display=swap');
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+:root {
+  /* --theme-background: #191919;
+  --theme-background-2: #121212;
+  --editor-background: #202020;
+  --theme-color: white;
+  --min-color: lightblue;
+  --max-color: lightgreen;
+  --shadow-color: #191919; */
+  --theme-background: lightgray;
+  --theme-background-2: white;
+  --editor-background: #F0F0F0;
+  --theme-color: black;
+  --min-color: blue;
+  --max-color: green;
+  --shadow-color: darkgray;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  background-color: var(--theme-background-2);
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+.appbar_section {
+  width: 100vw;
+  height: 38px;
+  min-height: 38px;
+  position: relative;
+  /* border: 1px solid black; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: .75rem;
+  padding: 0 .2rem;
+  z-index: 60;
+  -webkit-app-region: drag;
+  box-shadow: 0 0 4px var(--shadow-color);
+  color: var(--theme-color);
+  /* border-bottom: 2px solid var(--min-color); */
+  background-color: var(--editor-background) !important;
+}
+
+.appbar_section .file_btns {
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  height: 100%;
+  -webkit-app-region: no-drag;
+  padding-left: .5rem;
+}
+
+.appbar_section .buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.appbar_section button {
+  height: 28px;
+  width: 28px;
+  min-height: 28px;
+  position: relative;
+  margin: 0;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+  color: var(--theme-background-2);
+  border-radius: 4px;
+  -webkit-app-region: no-drag;
+  /* border: 1px solid blue; */
+  text-shadow: 0 0 1px var(--theme-color);
+}
+
+.appbar_section .buttons button:first-child:hover {
+  color: var(--min-color);
+}
+
+.appbar_section .buttons button:hover {
+  color: var(--max-color);
+}
+
+.appbar_section .buttons button:last-child:hover {
+  color: red;
+}
+
+.appbar_section .func_btn {
+  color: var(--theme-color);
+  margin-right: .2rem;
+}
+
+.appbar_section .func_btn:hover {
+  background: var(--theme-background);
+}
+
+.appbar_section img {
+  height: 22px;
+  margin-right: .3rem;
+  border-radius: .2rem;
+}
+
+/* Editor Editing */
+.editor_section {
+  width: 100vw;
+  height: 100%;
+  overflow: auto;
+}
+
+.editor_section .editor {
+  width: 100%;
+  height: 100%;
+  font-size: 15px;
+}
+
+
+/* Status Bar Editing */
+/* Status Section Styling Done Here */
+.status_section {
+  width: 100vw;
+  height: 40px;
+  min-height: 40px;
+  position: relative;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: .8rem;
+  padding-left: 1rem;
+  padding-right: .2rem;
+  background-color: var(--editor-background);
+  z-index: 30;
+  box-shadow: 0 0 3px var(--shadow-color);
+  border-bottom: 2px solid var(--min-color);
+  color: var(--theme-color);
+}
+
+.status_section .section_2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
