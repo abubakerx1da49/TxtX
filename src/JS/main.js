@@ -75,6 +75,37 @@ close_file_btn.addEventListener("click", () => {
 })
 
 
+// For Theme Change
+let r = document.querySelector(':root');
+
+setInterval(() => {
+
+
+    // For Dark Mode
+    let DarkMode = document.getElementById("DarkMode").checked;
+
+    if (DarkMode == true) {
+        r.style.setProperty('--theme-background', '#191919');
+        r.style.setProperty('--theme-background-2', '#121212');
+        r.style.setProperty('--editor-background', '#202020');
+        r.style.setProperty('--theme-color', 'white');
+        r.style.setProperty('--min-color', 'lightblue');
+        r.style.setProperty('--max-color', 'lightgreen');
+        r.style.setProperty('--shadow-color', '#191919');
+    } else {
+        r.style.setProperty('--theme-background', 'lightgray');
+        r.style.setProperty('--theme-background-2', 'white');
+        r.style.setProperty('--editor-background', '#F0F0F0');
+        r.style.setProperty('--theme-color', 'black');
+        r.style.setProperty('--min-color', 'blue');
+        r.style.setProperty('--max-color', 'green');
+        r.style.setProperty('--shadow-color', 'darkgray');
+    }
+
+
+}, 250);
+
+
 
 // Title Bar JS
 document.getElementById("quit-button").addEventListener("click", () => {
