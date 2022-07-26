@@ -52,8 +52,9 @@ body {
   -webkit-app-region: drag;
   box-shadow: 0 0 4px var(--shadow-color);
   color: var(--theme-color);
-  /* border-bottom: 2px solid var(--min-color); */
+  border-bottom: 2px solid var(--min-color);
   background-color: var(--editor-background) !important;
+  user-select: none !important;
 }
 
 .appbar_section .file_btns {
@@ -103,12 +104,16 @@ body {
 }
 
 .appbar_section .func_btn {
-  color: var(--theme-color);
+  width: auto !important;
+  padding: 0 .4rem;
+  color: darkgray;
   margin-right: .2rem;
 }
 
+#close_file_btn { display: none; }
+
 .appbar_section .func_btn:hover {
-  background: var(--theme-background);
+  color: var(--theme-color);
 }
 
 .appbar_section img {
@@ -122,14 +127,24 @@ body {
   width: 100vw;
   height: 100%;
   overflow: auto;
+  padding: .5rem;
 }
 
-.editor_section .editor {
+.editor_section #editor {
   width: 100%;
   height: 100%;
   font-size: 15px;
 }
 
+.ace_active-line{
+  /* background-color: var(--editor-background) !important; */
+  border-radius: 2px;
+}
+
+.ace_selection {
+  /* background-color: var(--shadow-color) !important; */
+  border-radius: 3px;
+}
 
 /* Status Bar Editing */
 /* Status Section Styling Done Here */
@@ -150,6 +165,8 @@ body {
   box-shadow: 0 0 3px var(--shadow-color);
   border-bottom: 2px solid var(--min-color);
   color: var(--theme-color);
+  display: none;
+  user-select: none !important;
 }
 
 .status_section .section_2 {

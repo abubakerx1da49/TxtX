@@ -1,5 +1,6 @@
 const { app, BrowserWindow, ipcMain, globalShortcut, dialog } = require('electron');
 const path = require('path');
+let fs = require('fs')
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require('electron-squirrel-startup')) {
@@ -7,14 +8,16 @@ if (require('electron-squirrel-startup')) {
   app.quit();
 }
 
+let mainWindow
+
 const createWindow = () => {
   // Create the browser window.
-  const mainWindow = new BrowserWindow({
+  mainWindow = new BrowserWindow({
     width: 800,
-    height: 600,
+    height: 500,
     minWidth: 400,
-    minHeight: 500,
-    icon: 'logo.png',
+    minHeight: 300,
+    // icon: 'logo.png',
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false,
@@ -29,6 +32,41 @@ const createWindow = () => {
   // Open the DevTools.
   mainWindow.webContents.openDevTools();
 };
+
+ipcMain.on('click-open-button', (event, arg) => {
+
+  if (arg == 'true') {
+    
+    dialog.showOpenDialog(mainWindow, {
+      title: 'Markdown Editor - Choose an Markdown File',
+      filters: [
+        { name: 'Text Files', extensions: ['txt'] }
+      ],
+      properties: ['openFile']
+    }).then(result => {
+      let filePath = result.filePaths[0]
+
+      app.addRecentDocument(filePath)
+
+      readFile(filePath)
+    }).catch(err => {
+      console.log(err)
+    })
+
+    let readFile = (filepath) => {
+      fs.readFile(filepath, 'utf-8', (err, data) => {
+        let allData = {
+          filepath: filepath,
+          filedata: data
+        }
+        event.sender.send('fileData_Open', allData)
+      })
+    }
+
+
+  }
+
+})
 
 ipcMain.on('quit-app', (event) => {
   app.quit()
