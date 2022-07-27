@@ -30,7 +30,7 @@ const createWindow = () => {
   mainWindow.loadFile(path.join(__dirname, 'index.html'));
 
   // Open the DevTools.
-  mainWindow.webContents.openDevTools();
+  // mainWindow.webContents.openDevTools();
 };
 
 ipcMain.on('click-open-button', (event, arg) => {
@@ -45,8 +45,6 @@ ipcMain.on('click-open-button', (event, arg) => {
       properties: ['openFile']
     }).then(result => {
       let filePath = result.filePaths[0]
-
-      app.addRecentDocument(filePath)
 
       readFile(filePath)
     }).catch(err => {
@@ -96,6 +94,11 @@ ipcMain.on('maximize-app', (event) => {
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
 app.on('ready', createWindow);
+app.on('ready', () => {
+  globalShortcut.register('Ctrl+Shift+I', () => {
+    console.log('Ctrl+Shift+I is pressed')
+  })
+})
 
 // Quit when all windows are closed, except on macOS. There, it's common
 // for applications and their menu bar to stay active until the user quits

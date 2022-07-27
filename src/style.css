@@ -134,12 +134,14 @@ body {
 .editor_section {
   width: 100vw;
   height: 100%;
-  overflow: auto;
   padding: .5rem;
-  overflow: hidden;
+  /* overflow: hidden; */
+  /* border: 1px solid red; */
+  
 }
 
 .editor_section #editor {
+  /* border: 1px solid black; */
   width: 100%;
   height: 100%;
   font-size: 15px;
@@ -164,10 +166,10 @@ body {
   background-color: var(--editor-background) !important;
 }
 
-.ace_cursor{
+/* .ace_cursor{
   background-color: var(--theme-color) !important;
   width: 2px !important;
-} 
+}  */
 
 /* Status Bar Editing */
 /* Status Section Styling Done Here */
@@ -185,7 +187,7 @@ body {
   padding-right: .2rem;
   background-color: var(--editor-background);
   z-index: 30;
-  box-shadow: 0 0 3px var(--shadow-color);
+  box-shadow: 0 0 8px var(--shadow-color);
   border-bottom: 2px solid var(--min-color);
   color: var(--theme-color);
   display: none;
