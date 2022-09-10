@@ -194,6 +194,14 @@ body {
   user-select: none !important;
 }
 
+.status_section .section_1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem 0 0;
+  width: 100%;
+}
+
 .status_section .section_2 {
   display: flex;
   justify-content: center;

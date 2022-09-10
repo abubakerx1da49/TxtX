@@ -41,6 +41,8 @@ open_file_btn.addEventListener("click", () => {
             status_section.style.display = "flex"
             appbar_section.style.borderBottom = "2px solid transparent"
             
+            document.getElementById("status").innerText = String(editor.getValue()).length
+            
             editor.addEventListener("input", () => {
                 // File Saving
                 try {
@@ -48,6 +50,9 @@ open_file_btn.addEventListener("click", () => {
                 } catch (err) {
                     console.error(err)
                 }
+
+                document.getElementById("status").innerText = String(editor.getValue()).length
+
             })
 
 
@@ -118,6 +123,10 @@ document.getElementById("quit-button").addEventListener("click", () => {
 
 document.getElementById("minimize-button").addEventListener("click", () => {
     ipcRenderer.send('minimize-app')
+})
+
+document.getElementById("new_window_btn").addEventListener("click", () => {
+    ipcRenderer.send('new-window')
 })
 
 document.getElementById("maximize-button").addEventListener("click", () => {

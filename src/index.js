@@ -66,8 +66,12 @@ ipcMain.on('click-open-button', (event, arg) => {
 
 })
 
+ipcMain.on('new-window', (event) => {
+  createWindow();
+})
+
 ipcMain.on('quit-app', (event) => {
-  app.quit()
+  BrowserWindow.getFocusedWindow().close()
 })
 
 ipcMain.on('minimize-app', (event) => {
