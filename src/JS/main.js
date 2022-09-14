@@ -27,6 +27,8 @@ open_file_btn.addEventListener("click", () => {
             let editorElem = document.createElement('div')
             editorElem.id = `editor`
             editorElem.classList += "editor"
+
+            document.getElementById("editor_section").innerHTML = " "
             document.getElementById("editor_section").appendChild(editorElem)
 
             
@@ -72,6 +74,7 @@ close_file_btn.addEventListener("click", () => {
     appbar_section.style.borderBottom = "2px solid var(--min-color)"
 
     document.getElementById("editor").remove()
+    document.getElementById("editor_section").innerHTML = "<small class='nothing'>No File is Selected</small>"
     // document.getElementById("editor").innerHTML = ""
     // console.log(document.getElementById("editor").classList.remove(" ace_editor ace-tm"))
     // document.getElementById("editor").classList.remove("ace_editor")

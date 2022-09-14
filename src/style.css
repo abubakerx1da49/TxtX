@@ -118,7 +118,7 @@ body {
   color: var(--theme-color);
 }
 
-.file_btns input{
+.file_btns input {
   box-shadow: none !important;
   outline: none !important;
 }
@@ -137,7 +137,7 @@ body {
   padding: .5rem;
   /* overflow: hidden; */
   /* border: 1px solid red; */
-  
+
 }
 
 .editor_section #editor {
@@ -162,7 +162,7 @@ body {
   /* border-radius: 3px; */
 }
 
-.ace_print-margin{
+.ace_print-margin {
   background-color: var(--editor-background) !important;
 }
 
@@ -206,4 +206,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.nothing {
+  color: gray;
+  user-select: none;
+  padding: .5rem;
 }
