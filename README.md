@@ -18,6 +18,8 @@ You Just Need to Click the Open File Button from top left corner, and start to e
 Txt X Comes with Handy Auto Save, which means that you don't want to Save the File Again and Again after Editing it.
 ## Dark Mode
 Txt X Comes with the pre-built Theme like Light Mode and Dark Mode
+## New
+Txt X is Totally capable of create a new seperate window for opening an new Text File
 <br/>
 <br/>
 ![2](/imgs/1.png)
